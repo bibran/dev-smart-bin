@@ -1,0 +1,44 @@
+import sys
+import pandas as pd
+import json
+import operator as op
+import smtplib
+from email.message import  EmailMessage
+
+def email_alerts(subject,body,to):
+    msg = EmailMessage()
+    msg.set_content(body)
+    msg['subject'] = subject
+    msg['to'] = to
+    user = 'smartbin.alerts@gmail.com'
+    password = 'avcddhmefereapun'
+    msg['from'] = user
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(user,password)
+    server.send_message(msg)
+    server.quit()
+
+def action(bin_type,items,user_name):
+    if bin_type == "dry":
+        if "wet" in items:
+            return True
+        else : 
+            return False
+    elif bin_type == "wet":
+        if "dry" in items:
+            return True
+        else : 
+            return False
+   
+def main(dict):
+    bin_type = dict['bin_type']
+    items = dict['items']
+    user_name = dict['user_name']
+    out = action(bin_type,items,user_name)
+    if out:
+        subject = "SmartBin Alert Notification"
+        body = f"Wrong item is put into {bin_type} bin"
+        to = user_name
+        email_alerts(subject,body,to)
+    return {'Output': out}
