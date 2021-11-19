@@ -5,3 +5,6 @@ pyoperators
 secure-smtplib
 emails 
 requests
+numpy
+pandas
+
