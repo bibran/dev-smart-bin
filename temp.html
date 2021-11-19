@@ -3,9 +3,19 @@
     <body>
         <h3>Models<h3/>
             <form method="post" action="/">
-                <input type="submit" value="Object_Detection" name="action1"/>
-                <input type="submit" value="Binary_Classification" name="action2" />
-                <input type="submit" value="Smart_Bin_AI" name="action3" />
+                <input type="submit" value="Object_Detection" name="action1"/> <br/>
+                <br>
+                <input type="submit" value="Binary_Classification" name="action2" /><br/>
+                <br>
+                <label for="bin_type">Choose a bin_type:</label>
+                <select name="bin_type" id="bin_type">
+                  <option value="wet">Wet</option>
+                  <option value="dry">Dry</option>
+                </select>
+                <br><br>
+                Email_Id: <input type="text" name="user_name" /> <br/>
+                <br/>
+                <input type="submit" value="Go_Smart_Bin" name="action3"/>
             </form>
     </body>
 </html>

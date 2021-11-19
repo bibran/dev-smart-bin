@@ -96,10 +96,10 @@ def action(bin_type,items):
         else : 
             return False
    
-def Alert_Notification(bin_type1,user_name1):
-    bin_type = bin_type1
+def Alert_Notification():
+    bin_type = request.form['bin_type']
     items = Binary_Classification()
-    user_name = user_name1
+    user_name = request.form['user_name']
     out = action(bin_type,items)
     if out:
         subject1 = "SmartBin Alert Notification"
@@ -110,15 +110,6 @@ def Alert_Notification(bin_type1,user_name1):
 
 
 # In[5]:
-
-
-#Inputs
-
-bin_type = "wet"
-user_name = "saiakhilpuli123@gmail.com"
-
-
-# In[6]:
 
 
 #Master_App
@@ -133,14 +124,14 @@ def index():
         elif  request.form.get('action2') == 'Binary_Classification':
             Binary_Classification_Model = Binary_Classification()
             return "Binary Classification is performed and Items are classified"
-        elif request.form.get('action3') == 'Smart_Bin_AI':
-            App = Alert_Notification(bin_type,user_name)
+        elif request.form.get('action3') == 'Go_Smart_Bin':
+            App = Alert_Notification()
             return "Smart Inspection is Completed"
         else:
             pass
     elif request.method == 'GET':
-        return render_template('temp.html')
-    return render_template("temp.html")
+        return render_template('Testing1.html')
+    return render_template("Testing1.html")
 if __name__ == '__main__':
     app.run()
 
