@@ -1,0 +1,8 @@
+Flask == 2.0.2
+os-sys == 2.1.4
+pandas == 1.3.4
+jsons  == 1.6.0
+pyoperators == 0.13.16
+secure-smtplib == 0.1.1
+emails == 0.6
+requests == 2.26.0
