@@ -4,7 +4,6 @@ pandas
 Flask 
 os-sys 
 jsons  
-pyoperators 
 secure-smtplib 
 emails 
 requests 
