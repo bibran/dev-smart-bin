@@ -1,5 +1,3 @@
-setuptools
-numpy
 pandas
 Flask 
 os-sys 
